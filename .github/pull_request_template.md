@@ -1,25 +1,41 @@
-**CONTEXT**
-<br/>_change: what is the problem that the code aims to solve._
+## **CONTEXT**
+### _change: feature #1 description._
+_change: what is the problem that the code aims to solve._
+### _change: feature #2 description._
+....
 
-**SUMMARY OF CHANGES**
-<br/>_change: what are the main changes in the code._
 
-**RELATED INFORMATION**
+## **SUMMARY OF CHANGES**
+### _change: feature #1 description._
+_change: what are the main changes in the code._
+### _change: feature #2 description._
+....
+
+
+## **RELATED INFORMATION**
+### _change: feature #1 description._
 - [PRD](REPLACE-WITH-URL)
 - [RFC](REPLACE-WITH-URL)
 - [Linear task](REPLACE-WITH-URL)
+### _change: feature #2 description._
+....
 
-**DEPENDENCIES**
+
+## **DEPENDENCIES**
+### _change: feature #1 description._
 - [ ] merge after this one: <replace-with-pr-url>.
-
-**TESTING**
-<br/>_change: what are the test cases that should be executed._
-- [ ] Test 1. - (assignee)
-- [ ] Test 2. - (assignee)
-- [ ] Test 3. - (assignee)
-
-**ROLLBACK PLAN**
-<br/>_change: This PR can be directly reverted. No rollback plan needed_
+### _change: feature #2 description._
+....
 
 
-**MARKETING**
+## **TESTING**
+### _change: feature #1 description._
+_change: what are the test cases that should be executed._<br/>
+- [ ] Test 1.<br/>
+- [ ] Test 2.
+### _change: feature #2 description._
+....
+
+
+## **ROLLBACK PLAN**
+_change: This PR can be directly reverted. No rollback plan needed_
