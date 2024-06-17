@@ -36,7 +36,7 @@ jobs:
     steps:
 
       - name: Checkout project
-      -         uses: actions/checkout@master
+        uses: actions/checkout@master
         with:
           repository: natete/${{ matrix.value.name }}
           ref: develop
