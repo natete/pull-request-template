@@ -14,7 +14,7 @@
 
 **TESTING**
 <br/>_change: what are the test cases that should be executed._<br/>
-- [ ] Test 1.<br/>
+- [ ] Test 1.<br/> (assignee)
 - [ ] Test 2.
 
 **ROLLBACK PLAN**
