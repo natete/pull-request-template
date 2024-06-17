@@ -40,7 +40,7 @@ jobs:
           #token: ${{ steps.generate_token.outputs.token }}
 
       - name: Update template
-        run: echo ${{ needs.setup.outputs.new-template }} > ./github/pull_request_template.md
+        run: echo ${{ needs.setup.outputs.new-template }} > .github/pull_request_template.md
 
       - name: Create Pull Request
         if: ${{steps.should-update.outputs.value}}
