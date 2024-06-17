@@ -27,9 +27,7 @@ jobs:
     strategy:
       matrix:
         value: ${{ fromJSON(needs.setup.outputs.matrix) }}
-    env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+    
 
     name: Create PR in ${{matrix.value.name}}
 
@@ -41,8 +39,6 @@ jobs:
           repository: natete/${{ matrix.value.name }}
           ref: develop
           token: ${{ secrets.PLAYTOMIC_BOT_PAT }}
-
-          #token: ${{ steps.generate_token.outputs.token }}
 
       - name: Update template
         run: echo ${{ needs.setup.outputs.new-template }} > .github/pull_request_template.md
