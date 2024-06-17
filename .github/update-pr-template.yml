@@ -1,0 +1,51 @@
+name: 'Update PR Template'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      new-template: ${{steps.read-template.outputs.template}}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read template
+        id: read-template
+        run: echo "template=$(cat .github/pull_request_template.md)" >> $GITHUB_OUTPUT
+
+
+  create-PRs:
+    runs-on: ubuntu-latest
+    needs: [ setup ]
+    strategy:
+      matrix:
+        value: ${{ fromJSON('[{"name": "anemone-demo-service"}]') }}
+
+    name: Create PR in ${{matrix.value.name}}
+
+    steps:
+
+      - name: Checkout project
+        uses: actions/checkout@master
+        with:
+          repository: natete/${{ matrix.value.name }}
+          ref: develop
+          #token: ${{ steps.generate_token.outputs.token }}
+
+      - name: Update template
+        run: echo ${{ needs.setup.outputs.new-template }} > ./github/pull_request_template.md
+
+      - name: Create Pull Request
+        if: ${{steps.should-update.outputs.value}}
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: upgrade/pull_request_template
+          commit-message: Upgrade pull request template
+          committer: playtomic-bot[bot] <playtomic-bot[bot]@users.noreply.github.com>
+          author: playtomic-bot[bot] <playtomic-bot[bot]@users.noreply.github.com>
+          delete-branch: true
+          title: Upgrade pull request template
