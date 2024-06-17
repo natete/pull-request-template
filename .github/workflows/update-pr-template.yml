@@ -16,7 +16,9 @@ jobs:
 
       - name: Read template
         id: read-template
-        run: echo "template=$(cat .github/pull_request_template.md)" >> $GITHUB_OUTPUT
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./github/pull_request_template.md
 
 
   create-PRs:
