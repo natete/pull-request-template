@@ -41,7 +41,14 @@ jobs:
           token: ${{ secrets.PLAYTOMIC_BOT_PAT }}
 
       - name: Update template
-        run: echo ${{ needs.setup.outputs.new-template }} > .github/pull_request_template.md
+        uses: DamianReeves/write-file-action@master
+        with:
+          path: ".github/pull_request_template.md"
+          contents: ${{ needs.setup.outputs.new-template }}
+          write-mode: overwrite
+
+
+        #run: echo ${{ needs.setup.outputs.new-template }} > .github/pull_request_template.md
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
