@@ -9,7 +9,7 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     outputs:
-      new-template: ${{steps.read-template.outputs.template}}
+      new-template: ${{steps.read-template.outputs.content}}
       matrix: '[{"name": "anemone-demo-service"}]'
     steps:
       - uses: actions/checkout@v4
