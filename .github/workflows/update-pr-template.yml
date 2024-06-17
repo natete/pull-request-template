@@ -27,6 +27,9 @@ jobs:
     strategy:
       matrix:
         value: ${{ fromJSON(needs.setup.outputs.matrix) }}
+    env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
     name: Create PR in ${{matrix.value.name}}
 
@@ -43,7 +46,7 @@ jobs:
         run: echo ${{ needs.setup.outputs.new-template }} > .github/pull_request_template.md
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v6
         with:
           branch: upgrade/pull_request_template
           commit-message: Upgrade pull request template
@@ -51,3 +54,4 @@ jobs:
           author: playtomic-bot[bot] <playtomic-bot[bot]@users.noreply.github.com>
           delete-branch: true
           title: Upgrade pull request template
+          token: ${{ secrets.GITHUB_TOKEN }}
