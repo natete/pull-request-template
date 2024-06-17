@@ -36,10 +36,12 @@ jobs:
     steps:
 
       - name: Checkout project
-        uses: actions/checkout@master
+      -         uses: actions/checkout@master
         with:
           repository: natete/${{ matrix.value.name }}
           ref: develop
+          token: ${{ secrets.PLAYTOMIC_BOT_PAT }}
+
           #token: ${{ steps.generate_token.outputs.token }}
 
       - name: Update template
