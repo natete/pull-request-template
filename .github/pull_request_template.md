@@ -13,8 +13,8 @@
 - [ ] merge after this one: <replace-with-pr-url>.
 
 **TESTING**
-<br/>_change: what are the test cases that should be executed._<br/>
-- [ ] Test 1.<br/> (assignee)
+<br/>_change: what are the test cases that should be executed._
+- [ ] Test 1. -  (assignee)
 - [ ] Test 2.
 
 **ROLLBACK PLAN**
