@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       new-template: ${{steps.read-template.outputs.template}}
+      matrix: '[{"name": "anemone-demo-service"}]'
     steps:
       - uses: actions/checkout@v4
 
@@ -23,7 +24,7 @@ jobs:
     needs: [ setup ]
     strategy:
       matrix:
-        value: ${{ fromJSON('[{"name": "anemone-demo-service"}]') }}
+        value: ${{ fromJSON(needs.setup.outputs.matrix) }}
 
     name: Create PR in ${{matrix.value.name}}
 
