@@ -36,6 +36,9 @@ _change: what are the test cases that should be executed._<br/>
 ### _change: feature #2 description._
 ....
 
+## **Communication**
+lorem ipsun
+
 
 ## **ROLLBACK PLAN**
 _change: This PR can be directly reverted. No rollback plan needed_
