@@ -31,7 +31,7 @@ _change: what are the main changes in the code._
 ## **TESTING**
 ### _change: feature #1 description._
 _change: what are the test cases that should be executed._<br/>
-- [ ] Test 1.<br/>
+- [ ] Test 1. - (assignee) <br/>
 - [ ] Test 2.
 ### _change: feature #2 description._
 ....
